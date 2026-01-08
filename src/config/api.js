@@ -2,11 +2,13 @@
 // Update API_BASE_URL after deploying backend to Vercel
 
 // For Development (Local)
-const DEV_API_URL = 'http://localhost:5001';
+const DEV_API_URL = 'https://codezyraa.vercel.app/';
+
 
 // For Production (Vercel)
 // Update this with your actual backend URL after deployment
-const PROD_API_URL = 'final-codezyra-backend.vercel.app';
+//   j jk j jkjkkjjnjnjknjnjjknjnjnnnnnnnnnnnnnnnnn
+const PROD_API_URL = 'https://final-codezyra-backend.vercel.app/';
 
 // Automatically select based on environment
 export const API_BASE_URL = import.meta.env.MODE === 'production' 
@@ -19,4 +21,4 @@ export const API_ENDPOINTS = {
   CONTACT: `${API_BASE_URL}/api/contact`,
 };
 
-export default API_BASE_URL;
+export default API_BASE_URL
