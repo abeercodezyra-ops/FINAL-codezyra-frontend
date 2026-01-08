@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Lighting Border Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes border-flow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes logo-settle {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animated-border {
+            position: relative;
+            padding: 4px;
+            border-radius: 1.5rem;
+            background: linear-gradient(90deg, #0ea5e9, #10b981, #0ea5e9, #10b981);
+            background-size: 200% 200%;
+            animation: border-flow 3s ease infinite;
+        }
+
+        .logo-container {
+            animation: logo-settle 0.6s ease-out forwards;
+        }
+
+        .inner-container {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 3rem;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center p-8">
+    
+    <div class="animated-border max-w-md w-full">
+        <div class="inner-container">
+            <div class="logo-container text-center">
+                <!-- Logo Placeholder -->
+                <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center">
+                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                
+                <!-- Company Name -->
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">CODEZYRA</h1>
+                
+                <!-- Skills/Tags -->
+                <div class="flex flex-wrap gap-2 justify-center mt-6">
+                    <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Progressive Development</span>
+                    <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Ongoing Enhancements</span>
+                    <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Scalable Solutions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

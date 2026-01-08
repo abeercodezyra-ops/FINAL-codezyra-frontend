@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #020617;
+}
+
+::selection {
+  background-color: #10b981;
+  /* Electric Green */
+  color: white;
+}
+
+@layer utilities {
+  .bg-brand-gradient {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+
+  /* Attractive Heading Styles */
+  .heading-gradient {
+    @apply bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent;
+  }
+
+  .heading-accent {
+    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
+  }
+
+  .heading-glow {
+    text-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+  }
+}
+
+.rotate-y-15 {
+  transform: rotateY(-15deg) rotateX(5deg) scale(1.1);
+}
+
+.rotate-y-18 {
+  transform: rotateY(-18deg) rotateX(8deg) scale(1.1);
+}
+
+.rotate-y-10 {
+  transform: rotateY(-10deg) rotateX(3deg) scale(1.05);
+}
+
+.hover-rotate-y-12:hover {
+  transform: rotateY(-12deg) rotateX(3deg) scale(1.15);
+}
+
+.hover-rotate-y-8:hover {
+  transform: rotateY(-8deg) rotateX(2deg) scale(1.1);
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+
+/* Animations */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Prevent horizontal scroll */
+* {
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Default cursor (no global hiding) */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}

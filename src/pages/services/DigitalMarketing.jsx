@@ -1,0 +1,172 @@
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, TrendingUp, Target, BarChart } from 'lucide-react';
+
+const DigitalMarketing = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-white">
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80" 
+                        alt="Digital Marketing Background"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+                </div>
+                <div className="relative z-10 max-w-[1280px] mx-auto px-5">
+                    <div className="text-center">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+                            Digital Marketing
+                        </h1>
+                        <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 drop-shadow-md">
+                            Data-driven digital marketing strategies including SEO, social media, and content marketing to increase your online visibility and drive growth.
+                        </p>
+                        <Link to="/contact">
+                            <button className="bg-brand-gradient text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 hover:opacity-90">
+                                Get Started <ArrowRight size={20} className="inline ml-2" />
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Main Content */}
+            <section className="py-20">
+                <div className="max-w-[1280px] mx-auto px-5">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        {/* Main Content */}
+                        <div className="lg:col-span-2 space-y-8">
+                            <div>
+                                <h2 className="text-4xl font-bold text-black mb-4">Grow Your Online Presence</h2>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    We create comprehensive digital marketing strategies that drive traffic, generate leads, and increase conversions for your business.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-2xl font-bold text-black mb-4">Our Services</h3>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Search Engine Optimization (SEO)</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Pay-Per-Click (PPC) Advertising</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Social Media Marketing</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Content Marketing and Strategy</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Email Marketing Campaigns</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-gray-700">
+                                        <span className="text-accent mt-1">✓</span>
+                                        <span>Analytics and Performance Tracking</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 className="text-2xl font-bold text-black mb-6">What We Deliver</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                                        <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
+                                            <TrendingUp size={32} />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-black mb-2">Increased Traffic</h4>
+                                        <p className="text-gray-600">More visitors to your site</p>
+                                    </div>
+                                    <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                                        <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
+                                            <Target size={32} />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-black mb-2">Better Targeting</h4>
+                                        <p className="text-gray-600">Reach the right audience</p>
+                                    </div>
+                                    <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                                        <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
+                                            <BarChart size={32} />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-black mb-2">Measurable Results</h4>
+                                        <p className="text-gray-600">Track ROI and performance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Sidebar */}
+                        <div className="lg:col-span-1 space-y-6">
+                            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                                <h3 className="text-2xl font-bold text-black mb-3">Ready to Grow?</h3>
+                                <p className="text-gray-600 mb-6">Let's boost your online presence</p>
+                                <Link to="/contact">
+                                    <button className="w-full bg-brand-gradient text-white px-6 py-3 rounded-lg font-bold transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5">
+                                        Contact Us
+                                    </button>
+                                </Link>
+                            </div>
+
+                            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                                <h4 className="text-xl font-bold text-black mb-4">Related Services</h4>
+                                <div className="space-y-3">
+                                    <Link to="/services/branding-design" className="block text-accent hover:text-primary transition-colors">
+                                        Branding & Design →
+                                    </Link>
+                                    <Link to="/services/web-app-development" className="block text-accent hover:text-primary transition-colors">
+                                        Web App Development →
+                                    </Link>
+                                    <Link to="/services/ecommerce-development" className="block text-accent hover:text-primary transition-colors">
+                                        E-Commerce Development →
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="relative py-20 overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop&q=80" 
+                        alt="Technology Background"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+                </div>
+                
+                <div className="relative z-10 max-w-[1280px] mx-auto px-5 text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+                        Ready to Grow Your Business?
+                    </h2>
+                    <p className="text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
+                        Let's discuss how we can help boost your online presence with our expert digital marketing team.
+                    </p>
+                    <Link to="/contact">
+                        <button className="bg-accent text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 hover:bg-accent/90">
+                            Get Started Today
+                        </button>
+                    </Link>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default DigitalMarketing;
