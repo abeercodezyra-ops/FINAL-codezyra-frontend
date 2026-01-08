@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import LazyMap from '../components/LazyMap';
 import bgImage from '../assets/pages img/start.avif';
+import { API_ENDPOINTS } from '../config/api';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const Contact = () => {
         }
 
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch(API_ENDPOINTS.CONTACT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
