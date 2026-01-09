@@ -16,6 +16,7 @@ export const API_BASE_URL = import.meta.env.MODE === 'production'
 export const API_ENDPOINTS = {
   HEALTH: `${API_BASE_URL}/api/health`,
   CONTACT: `${API_BASE_URL}/api/contact`,
+  NEWSLETTER: `${API_BASE_URL}/api/newsletter`,
 };
 
 export default API_BASE_URL;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ArrowRight, Rss } from 'lucide-react';
+import { API_ENDPOINTS } from '../config/api';
 
 const posts = [
     {
@@ -225,10 +226,45 @@ const Blog = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [category, setCategory] = useState('All');
     const [visibleCount, setVisibleCount] = useState(9); // number of grid cards (excluding featured) to show
+    const [newsletterEmail, setNewsletterEmail] = useState('');
+    const [newsletterStatus, setNewsletterStatus] = useState({ loading: false, success: null, error: null });
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleNewsletterSubmit = async (e) => {
+        e.preventDefault();
+        
+        if (!newsletterEmail || !/\S+@\S+\.\S+/.test(newsletterEmail)) {
+            setNewsletterStatus({ loading: false, success: null, error: 'Please enter a valid email address' });
+            return;
+        }
+
+        setNewsletterStatus({ loading: true, success: null, error: null });
+
+        try {
+            const res = await fetch(API_ENDPOINTS.NEWSLETTER, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: newsletterEmail }),
+            });
+
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.error || 'Failed to subscribe');
+            }
+
+            setNewsletterStatus({ loading: false, success: 'Successfully subscribed! Check your email.', error: null });
+            setNewsletterEmail('');
+
+            setTimeout(() => {
+                setNewsletterStatus((prev) => ({ ...prev, success: null }));
+            }, 5000);
+        } catch (err) {
+            setNewsletterStatus({ loading: false, success: null, error: err.message || 'Subscription failed. Please try again.' });
+        }
+    };
 
     // Reset visible count on filter/search change so pagination feels natural
     useEffect(() => {
@@ -432,16 +468,38 @@ const Blog = () => {
                         <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto px-4">
                             Get the latest tech trends, development tips, and industry insights delivered directly to your inbox.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg mx-auto px-4">
+                        <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg mx-auto px-4">
                             <input 
                                 type="email" 
+                                value={newsletterEmail}
+                                onChange={(e) => setNewsletterEmail(e.target.value)}
                                 placeholder="Enter your email address" 
-                                className="flex-1 px-4 sm:px-5 md:px-6 py-3 sm:py-3.5 md:py-4 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-white text-gray-900 placeholder-gray-400 text-sm sm:text-base md:text-lg touch-manipulation"
+                                disabled={newsletterStatus.loading}
+                                className="flex-1 px-4 sm:px-5 md:px-6 py-3 sm:py-3.5 md:py-4 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-white text-gray-900 placeholder-gray-400 text-sm sm:text-base md:text-lg touch-manipulation disabled:opacity-60 disabled:cursor-not-allowed"
                             />
-                            <button className="bg-accent text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-xl font-bold hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap text-sm sm:text-base md:text-lg touch-manipulation">
-                                Subscribe Now
+                            <button 
+                                type="submit"
+                                disabled={newsletterStatus.loading}
+                                className="bg-accent text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-xl font-bold hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap text-sm sm:text-base md:text-lg touch-manipulation disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                            >
+                                {newsletterStatus.loading ? 'Subscribing...' : 'Subscribe Now'}
                             </button>
-                        </div>
+                        </form>
+                        
+                        {/* Status Messages */}
+                        {(newsletterStatus.error || newsletterStatus.success) && (
+                            <div className="mt-4 sm:mt-6 px-4">
+                                <div className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg text-base font-semibold ${
+                                    newsletterStatus.error 
+                                        ? 'bg-red-50 text-red-700 border-2 border-red-200' 
+                                        : 'bg-green-50 text-green-700 border-2 border-green-200'
+                                }`}>
+                                    <span className="text-lg">{newsletterStatus.error ? '⚠️' : '✓'}</span>
+                                    <span>{newsletterStatus.error || newsletterStatus.success}</span>
+                                </div>
+                            </div>
+                        )}
+                        
                         <p className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6 px-4">No spam. Unsubscribe anytime.</p>
                     </div>
                 </div>
