@@ -208,7 +208,7 @@ const Services = () => {
                                 onMouseLeave={() => setHoveredId(null)}
                             >
                                 {/* Service Number */}
-                                <div className={`absolute left-3 sm:left-5 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 text-xs sm:text-sm md:text-base font-semibold z-[5] transition-colors duration-400 ${isHovered || isExpanded ? 'text-white' : 'text-gray-400'
+                                <div className={`absolute left-2 sm:left-5 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 text-sm sm:text-sm md:text-base font-bold z-[5] transition-colors duration-400 ${isHovered || isExpanded ? 'text-white' : 'text-gray-400'
                                     }`}>
                                     ({serviceNumber})
                                 </div>
@@ -231,11 +231,11 @@ const Services = () => {
                                 )}
 
                                 {/* Service Header */}
-                                <div className={`py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-[120px] flex items-center justify-center transition-all duration-400 relative rounded-xl sm:rounded-2xl ${isHovered || isExpanded
+                                <div className={`py-6 sm:py-8 md:py-10 pl-12 pr-12 sm:px-8 md:px-16 lg:px-20 xl:px-[120px] flex items-center justify-center transition-all duration-400 relative rounded-xl sm:rounded-2xl ${isHovered || isExpanded
                                     ? 'bg-black border-black'
                                     : 'bg-transparent border border-gray-200'
                                     }`}>
-                                    <h3 className={`text-lg sm:text-xl md:text-2xl lg:text-[2.8rem] font-semibold m-0 transition-colors duration-400 text-center relative z-[4] ml-0 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[180px] ${isHovered || isExpanded ? 'text-white' : 'text-gray-300'
+                                    <h3 className={`text-lg sm:text-xl md:text-2xl lg:text-[2.8rem] font-semibold m-0 transition-colors duration-400 text-center relative z-[4] ml-2 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[180px] ${isHovered || isExpanded ? 'text-white' : 'text-gray-300'
                                         }`}>
                                         {service.title}
                                     </h3>
