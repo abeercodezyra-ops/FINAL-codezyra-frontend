@@ -231,11 +231,11 @@ const Services = () => {
                                 )}
 
                                 {/* Service Header */}
-                                <div className={`py-6 sm:py-8 md:py-10 pl-12 pr-12 sm:px-8 md:px-16 lg:px-20 xl:px-[120px] flex items-center justify-center transition-all duration-400 relative rounded-xl sm:rounded-2xl ${isHovered || isExpanded
+                                <div className={`py-6 sm:py-8 md:py-10 pl-14 pr-10 sm:px-8 md:px-16 lg:px-20 xl:px-[120px] flex items-center justify-start sm:justify-center transition-all duration-400 relative rounded-xl sm:rounded-2xl ${isHovered || isExpanded
                                     ? 'bg-black border-black'
                                     : 'bg-transparent border border-gray-200'
                                     }`}>
-                                    <h3 className={`text-lg sm:text-xl md:text-2xl lg:text-[2.8rem] font-semibold m-0 transition-colors duration-400 text-center relative z-[4] ml-2 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[180px] ${isHovered || isExpanded ? 'text-white' : 'text-gray-300'
+                                    <h3 className={`text-base sm:text-xl md:text-2xl lg:text-[2.8rem] font-semibold m-0 transition-colors duration-400 text-left sm:text-center relative z-[4] ml-0 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[180px] ${isHovered || isExpanded ? 'text-white' : 'text-gray-300'
                                         }`}>
                                         {service.title}
                                     </h3>
