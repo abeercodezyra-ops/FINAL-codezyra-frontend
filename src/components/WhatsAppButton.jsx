@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhatsAppButton = () => {
     // Company WhatsApp number (from contact page)
-    const WHATSAPP_NUMBER = '923170245325'; // Format: country code + number (no + or spaces)
+    const WHATSAPP_NUMBER = '923482179016'; // Format: country code + number (no + or spaces)
     
     // Pre-filled message
     const DEFAULT_MESSAGE = `Hello 👋
