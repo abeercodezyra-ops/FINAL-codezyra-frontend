@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Users, Briefcase, Smile, MapPin, ChevronDown } from 'lucide-react';
-import directorImg from '../assets/Director img.png';
+import { Users, Briefcase, Smile, MapPin, ChevronDown, Linkedin, Mail } from 'lucide-react';
+import directorImg from '../assets/Gemini_Generated_Image_kmm2azkmm2azkmm2.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -140,6 +140,28 @@ const Metrics = () => {
                             <div className="flex-1 text-center sm:text-left">
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">Aashir Afaq</h3>
                                 <p className="text-lg sm:text-xl text-accent font-semibold mb-4">Director of Operations</p>
+                                
+                                {/* Social Links */}
+                                <div className="flex items-center justify-center sm:justify-start gap-3 mb-5">
+                                    <a 
+                                        href="https://linkedin.com/in/aashir-afaq" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 touch-manipulation text-sm sm:text-base font-medium"
+                                        aria-label="LinkedIn Profile"
+                                    >
+                                        <Linkedin size={18} />
+                                        <span>LinkedIn</span>
+                                    </a>
+                                    <a 
+                                        href="mailto:aashir@codezyra.com" 
+                                        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 touch-manipulation text-sm sm:text-base font-medium"
+                                        aria-label="Email"
+                                    >
+                                        <Mail size={18} />
+                                        <span>Email</span>
+                                    </a>
+                                </div>
                                 
                                 {/* Dropdown Toggle Button */}
                                 <button
