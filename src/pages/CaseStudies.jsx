@@ -151,7 +151,7 @@ const CaseStudies = () => {
 
                     {/* Desktop Overlapping View */}
                     <div className="hidden lg:block relative min-h-[500px] xl:min-h-[600px] py-12">
-                        <div className="relative w-full flex flex-wrap justify-center items-center" style={{ minHeight: '500px' }}>
+                        <div className="w-full flex flex-wrap justify-center items-center" style={{ minHeight: '500px' }}>
                             {cases.filter(c => !c.featured).map((item, i) => {
                                 const rotation = (i % 4) * 5 - 10; // -10, -5, 0, 5 degrees
                                 const nonFeaturedCases = cases.filter(c => !c.featured);
@@ -160,35 +160,37 @@ const CaseStudies = () => {
                                 return (
                                     <div 
                                         key={i}
-                                        className="relative transition-all duration-300 hover:z-[100]"
+                                        className="relative group/card transition-all duration-300"
                                         style={{
                                             transform: `rotate(${rotation}deg)`,
                                             zIndex: baseZIndex,
                                             marginLeft: i > 0 ? '-80px' : '0',
                                             marginTop: i % 2 === 0 ? '0' : '40px'
                                         }}
+                                        onMouseEnter={(e) => e.currentTarget.style.zIndex = '999'}
+                                        onMouseLeave={(e) => e.currentTarget.style.zIndex = baseZIndex}
                                     >
                                         <Link 
                                             to={`/case-studies/${item.slug}`} 
-                                            className="group block bg-white rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_60px_rgba(16,185,129,0.4)] transition-all duration-500 hover:-translate-y-8 hover:rotate-0 hover:scale-110 border-4 border-white"
+                                            className="block bg-white rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.15)] group-hover/card:shadow-[0_20px_60px_rgba(16,185,129,0.4)] transition-all duration-500 group-hover/card:-translate-y-8 group-hover/card:rotate-0 group-hover/card:scale-110 border-4 border-white"
                                         >
                                             <div className="relative h-[350px] w-[260px] xl:h-[400px] xl:w-[300px] overflow-hidden bg-gradient-to-br from-accent/20 to-primary/20">
                                                 <img 
                                                     src={item.image} 
                                                     alt={item.title}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
                                                     loading="lazy"
                                                     onError={(e) => {
                                                         e.target.style.display = 'none';
                                                         e.target.parentElement.style.background = 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)';
                                                     }}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-colors"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover/card:from-black/95 transition-colors"></div>
                                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                                                     <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-accent text-white mb-3 shadow-lg">
                                                         {item.tag}
                                                     </span>
-                                                    <h3 className="text-xl xl:text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors leading-tight">
+                                                    <h3 className="text-xl xl:text-2xl font-bold text-white mb-2 group-hover/card:text-accent transition-colors leading-tight">
                                                         {item.title}
                                                     </h3>
                                                     <p className="text-white/90 text-base leading-relaxed line-clamp-2">
