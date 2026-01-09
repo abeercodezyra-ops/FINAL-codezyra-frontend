@@ -27,24 +27,19 @@ const Hero = () => {
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Animate from bottom with fade
-            gsap.fromTo('.hero-arrow-flow',
+            gsap.fromTo('.hero-main-title',
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, delay: 0.2, ease: 'power3.out' }
             );
 
-            gsap.fromTo('.hero-main-title',
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, delay: 0.4, ease: 'power3.out' }
-            );
-
             gsap.fromTo('.hero-sub',
                 { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, delay: 0.5, ease: 'power3.out' }
+                { y: 0, opacity: 1, duration: 0.8, delay: 0.3, ease: 'power3.out' }
             );
 
             gsap.fromTo('.hero-actions',
                 { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, delay: 0.6, ease: 'power3.out' }
+                { y: 0, opacity: 1, duration: 0.8, delay: 0.4, ease: 'power3.out' }
             );
         }, heroRef);
 
