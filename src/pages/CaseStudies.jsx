@@ -102,14 +102,14 @@ const CaseStudies = () => {
             <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white overflow-x-hidden">
                 <div className="max-w-[1600px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
                     {/* Mobile/Tablet Grid View */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-4 sm:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-6 sm:gap-8">
                         {cases.map((item, i) => (
                             <Link 
                                 key={i}
                                 to={`/case-studies/${item.slug}`} 
-                                className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                                className="group block bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_15px_50px_rgba(16,185,129,0.25)] transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02]"
                             >
-                                <div className="relative h-[250px] sm:h-[300px] w-full overflow-hidden bg-gray-200">
+                                <div className="relative h-[280px] sm:h-[320px] w-full overflow-hidden bg-gradient-to-br from-accent/20 to-primary/20">
                                     <img 
                                         src={item.image} 
                                         alt={item.title}
@@ -120,12 +120,12 @@ const CaseStudies = () => {
                                             e.target.parentElement.style.background = 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)';
                                         }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                                        <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-colors"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
+                                        <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-accent text-white mb-3 shadow-lg">
                                             {item.tag}
                                         </span>
-                                        <h3 className="text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors leading-tight">
                                             {item.title}
                                         </h3>
                                         <p className="text-white/90 text-base sm:text-lg leading-relaxed line-clamp-2">
@@ -142,24 +142,24 @@ const CaseStudies = () => {
                         <div className="relative w-full flex flex-wrap justify-center items-center" style={{ minHeight: '500px' }}>
                             {cases.map((item, i) => {
                                 const rotation = (i % 4) * 5 - 10; // -10, -5, 0, 5 degrees
-                                const zIndex = cases.length - i;
+                                const baseZIndex = cases.length - i;
                                 
                                 return (
                                     <div 
                                         key={i}
-                                        className="relative"
+                                        className="relative transition-all duration-300 hover:z-[100]"
                                         style={{
                                             transform: `rotate(${rotation}deg)`,
-                                            zIndex: zIndex,
+                                            zIndex: baseZIndex,
                                             marginLeft: i > 0 ? '-80px' : '0',
                                             marginTop: i % 2 === 0 ? '0' : '40px'
                                         }}
                                     >
                                         <Link 
                                             to={`/case-studies/${item.slug}`} 
-                                            className="group block bg-white rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-6 hover:rotate-0 border-4 border-white"
+                                            className="group block bg-white rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_60px_rgba(16,185,129,0.4)] transition-all duration-500 hover:-translate-y-8 hover:rotate-0 hover:scale-110 border-4 border-white"
                                         >
-                                            <div className="relative h-[350px] w-[260px] xl:h-[400px] xl:w-[300px] overflow-hidden bg-gray-200">
+                                            <div className="relative h-[350px] w-[260px] xl:h-[400px] xl:w-[300px] overflow-hidden bg-gradient-to-br from-accent/20 to-primary/20">
                                                 <img 
                                                     src={item.image} 
                                                     alt={item.title}
@@ -170,12 +170,12 @@ const CaseStudies = () => {
                                                         e.target.parentElement.style.background = 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)';
                                                     }}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-colors"></div>
                                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                                                    <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
+                                                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-accent text-white mb-3 shadow-lg">
                                                         {item.tag}
                                                     </span>
-                                                    <h3 className="text-xl xl:text-2xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
+                                                    <h3 className="text-xl xl:text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors leading-tight">
                                                         {item.title}
                                                     </h3>
                                                     <p className="text-white/90 text-base leading-relaxed line-clamp-2">
