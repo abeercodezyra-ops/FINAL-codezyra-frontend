@@ -11,7 +11,7 @@ const pakistanLocation = {
 const Footer = () => {
 
     return (
-        <footer className="bg-[#0f172a] text-white py-8 sm:py-12 md:py-16 lg:py-20">
+        <footer className="bg-[#0f172a] text-white pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-6 sm:pb-8">
             <div className="max-w-[1280px] mx-auto px-4 sm:px-5">
 
                 {/* SERVING BUSINESSES SECTION */}
@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
 
                 {/* BOTTOM AREA */}
-                <div className="relative overflow-hidden py-4 sm:py-6 md:py-8">
+                <div className="relative overflow-hidden py-4 sm:py-5">
                     {/* Watermark */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[3rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] font-black text-gray-700/10 pointer-events-none whitespace-nowrap overflow-hidden select-none">
                         CODEZYRA
@@ -55,32 +55,32 @@ const Footer = () => {
                     
                     <div className="relative z-10 flex flex-col items-center">
                         {/* Top Section - Links */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 md:mb-6 px-4">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 px-4">
                             <a href="/privacy" className="hover:text-white transition-colors touch-manipulation">Privacy Policy</a>
                             <span className="hidden sm:inline text-gray-600">|</span>
                             <a href="/terms" className="hover:text-white transition-colors touch-manipulation">Terms & Conditions</a>
                         </div>
 
                         {/* Bottom Section - Copyright, Social Icons */}
-                        <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
+                        <div className="flex flex-col items-center gap-2 sm:gap-3">
                             {/* Copyright */}
-                            <div className="text-sm sm:text-base text-gray-400 text-center px-4 leading-relaxed">
+                            <div className="text-sm sm:text-base text-gray-400 text-center px-4">
                                 &copy; {new Date().getFullYear()} Codezyra. All Rights Reserved.
                             </div>
 
                             {/* Social Media Icons - Center */}
-                            <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
-                                    <Facebook size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 text-white" />
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
+                                    <Facebook size={16} className="sm:w-[18px] sm:h-[18px] text-white" />
                                 </a>
-                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
-                                    <Linkedin size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 text-white" />
+                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
+                                    <Linkedin size={16} className="sm:w-[18px] sm:h-[18px] text-white" />
                                 </a>
-                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
-                                    <Instagram size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 text-white" />
+                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
+                                    <Instagram size={16} className="sm:w-[18px] sm:h-[18px] text-white" />
                                 </a>
-                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
-                                    <Twitter size={16} className="sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 text-white" />
+                                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80 transition-all duration-300 hover:scale-110 touch-manipulation">
+                                    <Twitter size={16} className="sm:w-[18px] sm:h-[18px] text-white" />
                                 </a>
                             </div>
                         </div>
