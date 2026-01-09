@@ -208,7 +208,7 @@ const Services = () => {
                                 onMouseLeave={() => setHoveredId(null)}
                             >
                                 {/* Service Number */}
-                                <div className={`absolute left-2 sm:left-5 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 text-sm sm:text-sm md:text-base font-bold z-[5] transition-colors duration-400 ${isHovered || isExpanded ? 'text-white' : 'text-gray-400'
+                                <div className={`absolute hidden lg:block left-2 sm:left-5 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 text-sm sm:text-sm md:text-base font-bold z-[5] transition-colors duration-400 ${isHovered || isExpanded ? 'text-white' : 'text-gray-400'
                                     }`}>
                                     ({serviceNumber})
                                 </div>
