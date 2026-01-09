@@ -18,7 +18,6 @@ import CustomSoftware from './pages/services/CustomSoftware';
 import EcommerceDevelopment from './pages/services/EcommerceDevelopment';
 import ProjectRescue from './pages/services/ProjectRescue';
 import DigitalMarketing from './pages/services/DigitalMarketing';
-import BrandingDesign from './pages/services/BrandingDesign';
 
 import usePageAnimations from './hooks/usePageAnimations';
 
@@ -39,7 +38,6 @@ function AppContent() {
         <Route path="/services/ecommerce-development" element={<EcommerceDevelopment />} />
         <Route path="/services/project-rescue" element={<ProjectRescue />} />
         <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
-        <Route path="/services/branding-design" element={<BrandingDesign />} />
 
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />

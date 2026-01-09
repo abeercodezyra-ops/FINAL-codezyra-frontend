@@ -44,14 +44,7 @@ const fullServices = [
         slug: 'digital-marketing',
         desc: 'Data-driven marketing strategies to grow your online presence.',
         features: ['SEO & SEM', 'Social Media Marketing', 'Content Strategy', 'Analytics & Reporting']
-    },
-    {
-        icon: <PenTool size={40} />,
-        title: 'Branding & Design',
-        slug: 'branding-design',
-        desc: 'Strategic brand identity and user-centric interface design.',
-        features: ['Logo & Identity', 'UI/UX Design', 'Prototyping', 'Design Systems']
-    },
+    }
 ];
 
 const ServicesPage = () => {

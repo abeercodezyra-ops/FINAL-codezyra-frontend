@@ -47,7 +47,6 @@ const Navbar = () => {
                     <Link to="/services/ecommerce-development" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">E-commerce Development</Link>
                     <Link to="/services/project-rescue" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Software Project Rescue Service</Link>
                     <Link to="/services/digital-marketing" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Digital Marketing</Link>
-                    <Link to="/services/branding-design" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Branding & Design</Link>
                   </div>
                 </div>
               </div>

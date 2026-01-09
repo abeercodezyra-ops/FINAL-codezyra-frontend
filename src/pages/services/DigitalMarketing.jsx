@@ -123,9 +123,6 @@ const DigitalMarketing = () => {
                             <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                                 <h4 className="text-xl font-bold text-black mb-4">Related Services</h4>
                                 <div className="space-y-3">
-                                    <Link to="/services/branding-design" className="block text-accent hover:text-primary transition-colors">
-                                        Branding & Design →
-                                    </Link>
                                     <Link to="/services/web-app-development" className="block text-accent hover:text-primary transition-colors">
                                         Web App Development →
                                     </Link>

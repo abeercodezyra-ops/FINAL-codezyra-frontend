@@ -10,7 +10,6 @@ import softwareDevImg from '../assets/what we do/home-software-development-servi
 import ecommerceImg from '../assets/what we do/home-ecommerce-app-development-service-image.webp';
 import projectRescueImg from '../assets/what we do/software-project-rescue-service-image.webp';
 import digitalMarketingImg from '../assets/what we do/home-digital-marketing-service-mockup.webp';
-import brandingImg from '../assets/what we do/home-branding-and-design-service-mockup.webp';
 
 const services = [
     {
@@ -48,12 +47,6 @@ const services = [
         title: 'Digital Marketing',
         desc: 'Data-driven digital marketing strategies including SEO, social media, and content marketing to increase your online visibility and drive growth.',
         img: digitalMarketingImg
-    },
-    {
-        id: 7,
-        title: 'Branding & Design',
-        desc: 'Create a powerful brand identity with professional logo design, brand guidelines, and visual assets that resonate with your target audience.',
-        img: brandingImg
     }
 ];
 
