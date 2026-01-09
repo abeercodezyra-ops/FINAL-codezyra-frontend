@@ -5,6 +5,15 @@ import { ArrowRight } from 'lucide-react';
 
 const cases = [
     {
+        title: 'GlobalScale Logistics',
+        slug: 'globalscale',
+        tag: 'Enterprise IoT',
+        desc: 'How we helped a logistics giant track 1M+ shipments in real-time using IoT and React Native.',
+        metric: '1M+ Shipments Tracked',
+        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
+        featured: true
+    },
+    {
         title: 'Bloom',
         slug: 'bloom',
         tag: 'Mobile App',
@@ -67,6 +76,9 @@ const CaseStudies = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    // Get featured case study (first one or one marked as featured)
+    const featuredCase = cases.find(c => c.featured) || cases[0];
+
     return (
         <div className="min-h-screen bg-white">
             {/* Hero */}
@@ -103,7 +115,7 @@ const CaseStudies = () => {
                 <div className="max-w-[1600px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
                     {/* Mobile/Tablet Grid View */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-6 sm:gap-8">
-                        {cases.map((item, i) => (
+                        {cases.filter(c => !c.featured).map((item, i) => (
                             <Link 
                                 key={i}
                                 to={`/case-studies/${item.slug}`} 
@@ -140,9 +152,10 @@ const CaseStudies = () => {
                     {/* Desktop Overlapping View */}
                     <div className="hidden lg:block relative min-h-[500px] xl:min-h-[600px] py-12">
                         <div className="relative w-full flex flex-wrap justify-center items-center" style={{ minHeight: '500px' }}>
-                            {cases.map((item, i) => {
+                            {cases.filter(c => !c.featured).map((item, i) => {
                                 const rotation = (i % 4) * 5 - 10; // -10, -5, 0, 5 degrees
-                                const baseZIndex = cases.length - i;
+                                const nonFeaturedCases = cases.filter(c => !c.featured);
+                                const baseZIndex = nonFeaturedCases.length - i;
                                 
                                 return (
                                     <div 
@@ -195,28 +208,45 @@ const CaseStudies = () => {
             {/* Featured Block */}
             <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
                 <div className="max-w-[1280px] mx-auto px-4 sm:px-5">
-                    <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                    <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-500">
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Left Section - Content */}
                             <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center bg-white">
                                 <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-semibold bg-accent/10 text-accent mb-3 sm:mb-4 md:mb-5 w-fit">
-                                    Featured Case Study
+                                    ⭐ Featured Case Study
                                 </span>
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 sm:mb-4 md:mb-5 leading-tight">
-                                    Reimagining Logistics for <br className="hidden sm:block" /> GlobalScale
+                                    {featuredCase.title}
                                 </h2>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                                    How we helped a logistics giant track 1M+ shipments in real-time using IoT and React Native.
+                                <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+                                    {featuredCase.desc}
                                 </p>
-                                <Link to="/case-studies/globalscale">
-                                    <button className="bg-accent text-white px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:bg-accent/90 transition-colors flex items-center gap-2 text-base sm:text-lg md:text-xl w-fit touch-manipulation">
+                                <div className="flex items-center gap-2 mb-4 sm:mb-5 md:mb-6">
+                                    <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm sm:text-base font-semibold border border-green-200">
+                                        {featuredCase.tag}
+                                    </span>
+                                    <span className="px-3 py-1 bg-accent/5 text-accent rounded-full text-sm sm:text-base font-bold">
+                                        {featuredCase.metric}
+                                    </span>
+                                </div>
+                                <Link to={`/case-studies/${featuredCase.slug}`}>
+                                    <button className="bg-gradient-to-r from-accent to-green-500 text-white px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 text-base sm:text-lg md:text-xl w-fit touch-manipulation">
                                         Read the Story <ArrowRight size={18} className="sm:w-5 sm:h-5" />
                                     </button>
                                 </Link>
                             </div>
                             {/* Right Section - Visual */}
-                            <div className="h-64 sm:h-80 md:h-96 lg:h-auto bg-gradient-to-br from-accent/15 via-accent/10 to-accent/5 flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-[350px]">
-                                <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-accent/20 select-none">GS</div>
+                            <div className="h-64 sm:h-80 md:h-96 lg:h-auto relative overflow-hidden min-h-[250px] sm:min-h-[300px] md:min-h-[350px] group">
+                                <img 
+                                    src={featuredCase.image} 
+                                    alt={featuredCase.title}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-green-500/10 to-transparent"></div>
+                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                                    <span className="text-accent font-bold text-sm sm:text-base">🚀 Success Story</span>
+                                </div>
                             </div>
                         </div>
                     </div>
