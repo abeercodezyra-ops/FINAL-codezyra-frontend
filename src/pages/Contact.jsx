@@ -214,10 +214,10 @@ const Contact = () => {
 
             {/* Global toast for status */}
             {(status.error || status.success) && (
-                <div className="fixed bottom-6 right-6 z-50">
-                    <div className={`flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg text-sm font-semibold ${status.error ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-green-50 text-green-700 border border-green-200'
+                <div className="fixed top-6 right-6 z-50 animate-slide-down">
+                    <div className={`flex items-center gap-3 px-5 py-3.5 rounded-xl shadow-2xl text-sm font-bold ${status.error ? 'bg-red-50 text-red-700 border-2 border-red-300' : 'bg-green-50 text-green-700 border-2 border-green-300'
                         }`}>
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border mr-1">
+                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white shadow-sm border-2 mr-1 font-bold text-base">
                             {status.error ? '!' : '✓'}
                         </span>
                         <span>{status.error || status.success}</span>
