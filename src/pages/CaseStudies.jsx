@@ -122,13 +122,13 @@ const CaseStudies = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                                        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
+                                        <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
                                             {item.tag}
                                         </span>
-                                        <h3 className="text-base sm:text-lg font-bold text-white mb-1 group-hover:text-accent transition-colors">
+                                        <h3 className="text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
                                             {item.title}
                                         </h3>
-                                        <p className="text-white/90 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                                        <p className="text-white/90 text-base sm:text-lg leading-relaxed line-clamp-2">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -172,13 +172,13 @@ const CaseStudies = () => {
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                                                    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
+                                                    <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-white/30 backdrop-blur-md text-white mb-2 border border-white/20">
                                                         {item.tag}
                                                     </span>
-                                                    <h3 className="text-lg xl:text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
+                                                    <h3 className="text-xl xl:text-2xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
                                                         {item.title}
                                                     </h3>
-                                                    <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
+                                                    <p className="text-white/90 text-base leading-relaxed line-clamp-2">
                                                         {item.desc}
                                                     </p>
                                                 </div>
@@ -199,17 +199,17 @@ const CaseStudies = () => {
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Left Section - Content */}
                             <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center bg-white">
-                                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold bg-accent/10 text-accent mb-3 sm:mb-4 md:mb-5 w-fit">
+                                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-semibold bg-accent/10 text-accent mb-3 sm:mb-4 md:mb-5 w-fit">
                                     Featured Case Study
                                 </span>
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 sm:mb-4 md:mb-5 leading-tight">
                                     Reimagining Logistics for <br className="hidden sm:block" /> GlobalScale
                                 </h2>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                                     How we helped a logistics giant track 1M+ shipments in real-time using IoT and React Native.
                                 </p>
                                 <Link to="/case-studies/globalscale">
-                                    <button className="bg-accent text-white px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:bg-accent/90 transition-colors flex items-center gap-2 text-sm sm:text-base md:text-lg w-fit touch-manipulation">
+                                    <button className="bg-accent text-white px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:bg-accent/90 transition-colors flex items-center gap-2 text-base sm:text-lg md:text-xl w-fit touch-manipulation">
                                         Read the Story <ArrowRight size={18} className="sm:w-5 sm:h-5" />
                                     </button>
                                 </Link>
@@ -239,11 +239,11 @@ const CaseStudies = () => {
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-2xl px-2">
                         Your project could be next
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-white mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto drop-shadow-lg px-4">
+                    <p className="text-base sm:text-lg md:text-xl text-white mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto drop-shadow-lg px-4">
                         Join the ranks of successful founders building with Codezyra.
                     </p>
                     <Link to="/contact">
-                        <button className="bg-white text-accent px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg touch-manipulation">
+                        <button className="bg-white text-accent px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl text-base sm:text-lg md:text-xl touch-manipulation">
                             Book Strategy Call
                         </button>
                     </Link>

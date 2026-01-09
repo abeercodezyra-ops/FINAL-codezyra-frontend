@@ -22,7 +22,7 @@ const Footer = () => {
                         </h2>
 
                         <div className="flex flex-wrap gap-2 sm:gap-3">
-                            <div className="px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-accent text-white shadow-lg shadow-accent/20">
+                            <div className="px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full text-sm sm:text-base font-semibold bg-accent text-white shadow-lg shadow-accent/20">
                                 PK
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="flex-1 w-full lg:w-auto bg-[#1e293b]/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 md:gap-6 border border-gray-700/50">
                         <div className="flex-1 w-full sm:w-auto">
                             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">{pakistanLocation.name}</h3>
-                            <p className="text-gray-300 text-xs sm:text-sm whitespace-pre-line leading-relaxed">
+                            <p className="text-gray-300 text-sm sm:text-base whitespace-pre-line leading-relaxed">
                                 {pakistanLocation.address}
                             </p>
                         </div>
@@ -55,7 +55,7 @@ const Footer = () => {
                     
                     <div className="relative z-10 flex flex-col items-center">
                         {/* Top Section - Links */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 md:mb-6 px-4">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 md:mb-6 px-4">
                             <a href="/privacy" className="hover:text-white transition-colors touch-manipulation">Privacy Policy</a>
                             <span className="hidden sm:inline text-gray-600">|</span>
                             <a href="/terms" className="hover:text-white transition-colors touch-manipulation">Terms & Conditions</a>
@@ -64,7 +64,7 @@ const Footer = () => {
                         {/* Bottom Section - Copyright, Social Icons */}
                         <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
                             {/* Copyright */}
-                            <div className="text-xs sm:text-sm text-gray-400 text-center px-4 leading-relaxed">
+                            <div className="text-sm sm:text-base text-gray-400 text-center px-4 leading-relaxed">
                                 &copy; {new Date().getFullYear()} Codezyra. All Rights Reserved.
                             </div>
 

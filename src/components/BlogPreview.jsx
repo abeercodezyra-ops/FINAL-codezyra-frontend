@@ -121,7 +121,7 @@ const BlogPreview = () => {
                                 
                                 {/* Category and Title below card */}
                                 <div className="bg-white rounded-b-2xl p-6 shadow-lg">
-                                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
                                         {post.category}
                                     </p>
                                     <h4 className="text-lg font-bold text-black group-hover:text-accent transition-colors leading-tight">

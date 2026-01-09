@@ -91,7 +91,7 @@ const Timeline = () => {
                     <h2 className="text-[2rem] sm:text-[2.5rem] md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-3 sm:mb-4 px-2">
                         From Start To <span className="text-accent">Finish</span>
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
                         We follow a structured and client focused development process to ensure the successful delivery of high quality software solutions.
                     </p>
                 </div>
@@ -177,7 +177,7 @@ const Timeline = () => {
                                         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-accent mb-3 md:mb-4 relative z-10">
                                             {step.title}
                                         </h3>
-                                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed relative z-10">
+                                        <p className="text-base sm:text-lg text-gray-700 leading-relaxed relative z-10">
                                             {step.desc}
                                         </p>
                                     </div>
@@ -311,7 +311,7 @@ const Timeline = () => {
                                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-accent mb-2 sm:mb-3 relative z-10 pt-2">
                                     {step.title}
                                 </h3>
-                                <p className="text-gray-700 leading-relaxed text-sm sm:text-base relative z-10">
+                                <p className="text-gray-700 leading-relaxed text-base sm:text-lg relative z-10">
                                     {step.desc}
                                 </p>
                             </div>

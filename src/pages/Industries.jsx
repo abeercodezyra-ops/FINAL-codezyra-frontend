@@ -79,12 +79,12 @@ const Industries = () => {
                                 <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 group-hover:text-accent transition-colors">
                                     {ind.title}
                                 </h3>
-                                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+                                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                                     {ind.desc}
                                 </p>
                                 <ul className="space-y-2 sm:space-y-3">
                                     {ind.bullets.map((b, idx) => (
-                                        <li key={idx} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700">
+                                        <li key={idx} className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg text-gray-700">
                                             <span className="text-accent mt-0.5 sm:mt-1 font-bold flex-shrink-0">✓</span>
                                             <span className="leading-relaxed">{b}</span>
                                         </li>
@@ -104,7 +104,7 @@ const Industries = () => {
                             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-5 md:mb-6 px-2">
                                 Why Codezyra for Your <span className="text-accent">Industry?</span>
                             </h2>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-7 md:mb-8 leading-relaxed px-2">
+                            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 leading-relaxed px-2">
                                 Generic dev shops don't understand your regulatory requirements or user behaviors. We do.
                             </p>
                             <div className="space-y-4 sm:space-y-5 md:space-y-6">
@@ -114,7 +114,7 @@ const Industries = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg sm:text-xl font-bold text-black mb-1 sm:mb-2">Regulatory Compliance</h4>
-                                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                             We build with HIPAA, PCI, and GDPR in mind from day one, ensuring your application meets all industry standards.
                                         </p>
                                     </div>
@@ -125,7 +125,7 @@ const Industries = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg sm:text-xl font-bold text-black mb-1 sm:mb-2">Scalable Architecture</h4>
-                                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                             Systems designed to handle millions of transactions, users, and data points without breaking a sweat.
                                         </p>
                                     </div>
@@ -136,7 +136,7 @@ const Industries = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg sm:text-xl font-bold text-black mb-1 sm:mb-2">Industry Expertise</h4>
-                                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                             Our team has worked across multiple industries, bringing proven solutions and best practices to your project.
                                         </p>
                                     </div>
@@ -150,7 +150,7 @@ const Industries = () => {
                                         <Cloud size={40} className="sm:w-16 sm:h-16 md:w-16 md:h-16 text-accent" />
                                     </div>
                                     <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 px-2">Industry-Focused Solutions</h3>
-                                    <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto px-4">
+                                    <p className="text-base sm:text-lg text-gray-600 max-w-md mx-auto px-4">
                                         We understand the unique challenges and opportunities in each industry we serve.
                                     </p>
                                 </div>
@@ -176,11 +176,11 @@ const Industries = () => {
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl px-2">
                         Got a specific industry challenge?
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto drop-shadow-lg px-4">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto drop-shadow-lg px-4">
                         Let's discuss how we can help solve your industry-specific problems with tailored solutions.
                     </p>
                     <Link to="/contact">
-                        <button className="bg-white text-accent px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base md:text-lg touch-manipulation">
+                        <button className="bg-white text-accent px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-base sm:text-lg md:text-xl touch-manipulation">
                             Discuss Your Industry Project <ArrowRight size={18} className="sm:w-5 sm:h-5 inline ml-2" />
                         </button>
                     </Link>

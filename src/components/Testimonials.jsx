@@ -125,7 +125,7 @@ const Testimonials = () => {
                             ref={el => cardsRef.current[i] = el}
                             className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200"
                         >
-                            <p className="text-gray-700 text-sm sm:text-base md:text-lg mb-4 sm:mb-5 md:mb-6 leading-relaxed">"{testi.quote}"</p>
+                            <p className="text-gray-700 text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6 leading-relaxed">"{testi.quote}"</p>
                             <div className="flex items-center gap-3 sm:gap-4">
                                 <img 
                                     src={testi.img} 
@@ -136,8 +136,8 @@ const Testimonials = () => {
                                     }}
                                 />
                                 <div className="min-w-0">
-                                    <h4 className="font-bold text-black text-sm sm:text-base truncate">{testi.name}</h4>
-                                    <span className="text-xs sm:text-sm text-gray-500 truncate block">{testi.role}</span>
+                                    <h4 className="font-bold text-black text-base sm:text-lg truncate">{testi.name}</h4>
+                                    <span className="text-sm sm:text-base text-gray-500 truncate block">{testi.role}</span>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@ const Testimonials = () => {
                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-5 md:mb-6 text-center px-4">Our Presence</h3>
                         
                         {/* Description */}
-                        <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4">
+                        <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4">
                             We're proud to serve clients globally from our base in Pakistan, delivering world-class software solutions with passion and expertise.
                         </p>
                         

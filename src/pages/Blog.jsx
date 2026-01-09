@@ -272,7 +272,7 @@ const Blog = () => {
                             placeholder="Search articles..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-gray-50 focus:bg-white text-sm sm:text-base touch-manipulation"
+                                className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-gray-50 focus:bg-white text-base sm:text-lg touch-manipulation"
                         />
                     </div>
                         {/* Category Filters */}
@@ -280,7 +280,7 @@ const Blog = () => {
                         {['All', 'Development', 'Design', 'Strategy', 'DevOps'].map(cat => (
                             <button
                                 key={cat}
-                                    className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 touch-manipulation ${
+                                    className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 touch-manipulation ${
                                         category === cat
                                             ? 'bg-accent text-white shadow-lg shadow-accent/30 scale-105'
                                             : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-accent hover:text-accent hover:bg-accent/5'

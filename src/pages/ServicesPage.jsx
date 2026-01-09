@@ -99,12 +99,12 @@ const ServicesPage = () => {
                                 <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 sm:mb-3 group-hover:text-accent transition-colors">
                                     {service.title}
                                 </h3>
-                                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+                                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                                     {service.desc}
                                 </p>
                                 <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6">
                                     {service.features.map((feat, idx) => (
-                                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                                        <li key={idx} className="flex items-start gap-2 text-base sm:text-lg text-gray-700">
                                             <span className="text-accent mt-0.5 sm:mt-1 flex-shrink-0">✓</span>
                                             <span>{feat}</span>
                                         </li>
@@ -112,7 +112,7 @@ const ServicesPage = () => {
                                 </ul>
                                 <Link
                                     to={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-4 transition-all text-sm sm:text-base"
+                                    className="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-4 transition-all text-base sm:text-lg"
                                 >
                                     Learn More <ArrowRight size={16} className="sm:w-5 sm:h-5" />
                                 </Link>
@@ -138,11 +138,11 @@ const ServicesPage = () => {
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-5 md:mb-6 drop-shadow-2xl px-2">
                         Ready to Start Your Project?
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto drop-shadow-lg px-4">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto drop-shadow-lg px-4">
                         Let's discuss how we can help bring your vision to life with our expert team.
                     </p>
                     <Link to="/contact">
-                        <button className="bg-accent text-white px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 hover:bg-accent/90 touch-manipulation">
+                        <button className="bg-accent text-white px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-lg text-base sm:text-lg md:text-xl font-bold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 hover:bg-accent/90 touch-manipulation">
                             Get Started Today
                         </button>
                     </Link>

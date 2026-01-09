@@ -68,16 +68,16 @@ const Hero = () => {
             
             <div className="max-w-[1280px] mx-auto px-4 sm:px-5 w-full relative z-10 py-8 sm:py-12 md:py-0">
                 <div className="relative z-10 text-center max-w-5xl mx-auto pt-8 sm:pt-12 md:pt-8">
-                    <h1 className="hero-main-title text-[2rem] sm:text-[2.5rem] md:text-[3.2rem] lg:text-[4rem] xl:text-[4.5rem] font-extrabold leading-tight text-white mb-2 sm:mb-3 tracking-tight px-2 drop-shadow-2xl">
+                    <h1 className="hero-main-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight text-white mb-2 sm:mb-3 tracking-tight px-2 drop-shadow-2xl">
                         <span className="inline-block transform hover:scale-105 transition-transform duration-300">Plan</span>
-                        <span className="inline-block text-accent mx-2 sm:mx-3 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)] text-[2.5rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5rem]">→</span>
+                        <span className="inline-block text-accent mx-2 sm:mx-3 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">→</span>
                         <span className="inline-block transform hover:scale-105 transition-transform duration-300">Build</span>
-                        <span className="inline-block text-accent mx-2 sm:mx-3 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)] text-[2.5rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5rem]">→</span>
+                        <span className="inline-block text-accent mx-2 sm:mx-3 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">→</span>
                         <span className="inline-block transform hover:scale-105 transition-transform duration-300">Succeed</span>
                     </h1>
 
                     {/* Rotating Text */}
-                    <div className="hero-sub font-bold text-[1.6rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-normal mt-3 sm:mt-4 md:mt-5 mb-5 sm:mb-6 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center relative px-2">
+                    <div className="hero-sub font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-normal mt-3 sm:mt-4 md:mt-5 mb-5 sm:mb-6 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center relative px-2">
                         {ROTATING_TEXTS.map((text, index) => (
                             <span
                                 key={index}
@@ -90,12 +90,12 @@ const Hero = () => {
                             </span>
                         ))}
                     </div>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 sm:mb-7 md:mb-8 max-w-4xl mx-auto font-semibold px-4 drop-shadow-2xl leading-relaxed">
+                    <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-6 sm:mb-7 md:mb-8 max-w-4xl mx-auto font-semibold px-4 drop-shadow-2xl leading-relaxed">
                         Available in your <span className="text-accent font-bold">Timezone</span>, at <span className="text-accent font-bold">Affordable Rates</span>, with <span className="text-accent font-bold">Full Transparency</span>
                     </p>
                     <div className="hero-actions flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
                         <Link to="/contact" className="w-full sm:w-auto">
-                            <button className="w-full sm:w-auto bg-brand-gradient text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(16,185,129,0.4)] hover:shadow-[0_15px_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 hover:scale-105 touch-manipulation">
+                            <button className="w-full sm:w-auto bg-brand-gradient text-white px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-4 rounded-xl text-lg sm:text-xl font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(16,185,129,0.4)] hover:shadow-[0_15px_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 hover:scale-105 touch-manipulation">
                                 Get a Free Consultation
                             </button>
                         </Link>

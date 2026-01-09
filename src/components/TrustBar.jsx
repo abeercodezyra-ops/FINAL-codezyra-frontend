@@ -21,7 +21,7 @@ const TrustBar = () => {
                             <React.Fragment key={`set1-${index}`}>
                                 <div className="flex items-center gap-2 sm:gap-3 group cursor-default flex-shrink-0 px-4 sm:px-6 md:px-8">
                                     <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500 group-hover:text-accent transition-colors duration-300 flex-shrink-0" strokeWidth={2} />
-                                    <span className="text-xs sm:text-sm font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
+                                    <span className="text-sm sm:text-base font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                                         {item.label}
                                     </span>
                                 </div>
@@ -42,7 +42,7 @@ const TrustBar = () => {
                             <React.Fragment key={`set2-${index}`}>
                                 <div className="flex items-center gap-2 sm:gap-3 group cursor-default flex-shrink-0 px-4 sm:px-6 md:px-8">
                                     <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500 group-hover:text-accent transition-colors duration-300 flex-shrink-0" strokeWidth={2} />
-                                    <span className="text-xs sm:text-sm font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
+                                    <span className="text-sm sm:text-base font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                                         {item.label}
                                     </span>
                                 </div>
@@ -63,7 +63,7 @@ const TrustBar = () => {
                             <React.Fragment key={`set3-${index}`}>
                                 <div className="flex items-center gap-2 sm:gap-3 group cursor-default flex-shrink-0 px-4 sm:px-6 md:px-8">
                                     <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500 group-hover:text-accent transition-colors duration-300 flex-shrink-0" strokeWidth={2} />
-                                    <span className="text-xs sm:text-sm font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
+                                    <span className="text-sm sm:text-base font-bold text-gray-500 tracking-wider uppercase group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                                         {item.label}
                                     </span>
                                 </div>

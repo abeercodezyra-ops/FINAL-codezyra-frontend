@@ -131,7 +131,7 @@ const Metrics = () => {
                     </div>
                     <div>
                         <div className="text-gray-800 font-semibold">Aashir Afaq</div>
-                        <div className="text-sm text-gray-500">Director of Operations</div>
+                        <div className="text-base text-gray-500">Director of Operations</div>
                     </div>
                 </div>
             </div>

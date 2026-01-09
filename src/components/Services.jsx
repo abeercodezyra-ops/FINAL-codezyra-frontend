@@ -253,12 +253,12 @@ const Services = () => {
                                     >
                                         <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-4 sm:py-6 md:py-8 pb-4 sm:pb-6 md:pb-8 flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-8 items-start lg:items-center bg-dark rounded-b-xl sm:rounded-b-2xl -mt-2 sm:-mt-3 md:-mt-5">
                                             <div ref={el => contentRefs.current[service.id] = el} className="flex-1 w-full lg:w-auto">
-                                                <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-4 sm:mb-5 leading-relaxed">
+                                                <p className="text-gray-400 text-base sm:text-lg md:text-xl mb-4 sm:mb-5 leading-relaxed">
                                                     {service.desc}
                                                 </p>
                                                 <Link
                                                     to="/services"
-                                                    className="inline-flex items-center gap-2 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 border border-white rounded-full transition-all duration-300 hover:bg-accent hover:border-accent hover:text-white touch-manipulation text-sm sm:text-base"
+                                                    className="inline-flex items-center gap-2 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 border border-white rounded-full transition-all duration-300 hover:bg-accent hover:border-accent hover:text-white touch-manipulation text-base sm:text-lg"
                                                 >
                                                     Learn More <ArrowRight size={16} className="sm:w-5 sm:h-5" />
                                                 </Link>
