@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Users, Briefcase, Smile, MapPin } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Users, Briefcase, Smile, MapPin, ChevronDown } from 'lucide-react';
 import directorImg from '../assets/Director img.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,6 +11,7 @@ const Metrics = () => {
     const headingRef = useRef(null);
     const cardsRef = useRef([]);
     const testimonialRef = useRef(null);
+    const [isDirectorBioOpen, setIsDirectorBioOpen] = useState(false);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -125,13 +126,55 @@ const Metrics = () => {
                     </div>
                 </div>
 
-                <div ref={testimonialRef} className="flex items-center justify-center gap-4 pt-8 border-t border-gray-200">
-                    <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <img src={directorImg} alt="Aashir Afaq" className="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <div>
-                        <div className="text-gray-800 font-semibold">Aashir Afaq</div>
-                        <div className="text-base text-gray-500">Director of Operations</div>
+                {/* Director Section - Enhanced */}
+                <div ref={testimonialRef} className="mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-10 md:pt-12 border-t-2 border-gray-200">
+                    <div className="max-w-4xl mx-auto">
+                        {/* Director Header with Larger Image */}
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 mb-6">
+                            {/* Larger Profile Image */}
+                            <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center overflow-hidden shadow-xl ring-4 ring-accent/20 flex-shrink-0">
+                                <img src={directorImg} alt="Aashir Afaq - Director of Operations" className="w-full h-full object-cover" loading="lazy" />
+                            </div>
+                            
+                            {/* Director Info */}
+                            <div className="flex-1 text-center sm:text-left">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">Aashir Afaq</h3>
+                                <p className="text-lg sm:text-xl text-accent font-semibold mb-4">Director of Operations</p>
+                                
+                                {/* Dropdown Toggle Button */}
+                                <button
+                                    onClick={() => setIsDirectorBioOpen(!isDirectorBioOpen)}
+                                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 touch-manipulation"
+                                >
+                                    <span>{isDirectorBioOpen ? 'Hide' : 'Read'} Profile</span>
+                                    <ChevronDown 
+                                        size={20} 
+                                        className={`transform transition-transform duration-300 ${isDirectorBioOpen ? 'rotate-180' : ''}`} 
+                                    />
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Collapsible Bio Section */}
+                        <div 
+                            className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                isDirectorBioOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                            }`}
+                        >
+                            <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 sm:p-8 md:p-10 shadow-lg border-l-4 border-accent">
+                                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Leadership & Vision</h4>
+                                
+                                <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-700 leading-relaxed">
+                                    <p>
+                                        Aashir Afaq leads operational strategy and execution at Codezyra, overseeing the delivery of scalable digital solutions for clients worldwide. With extensive experience in software development operations, he ensures seamless project management, team coordination, and technical excellence across all engagements.
+                                    </p>
+                                    
+                                    <p>
+                                        His leadership focuses on building efficient processes, fostering innovation, and maintaining the highest standards of quality in software delivery. Aashir's strategic approach combines technical expertise with business acumen, enabling Codezyra to consistently deliver enterprise-grade solutions that drive measurable results for our clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
