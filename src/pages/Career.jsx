@@ -33,12 +33,34 @@ const Career = () => {
     // Prevent background scroll when modal is open
     useEffect(() => {
         if (showModal) {
+            // Prevent scrolling on body and html
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+            // Prevent touch scroll on mobile
+            document.body.style.touchAction = 'none';
+            // Save current scroll position
+            const scrollY = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = '100%';
         } else {
-            document.body.style.overflow = 'unset';
+            // Restore scroll position
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            document.body.style.touchAction = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            document.body.style.touchAction = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
         };
     }, [showModal]);
 
