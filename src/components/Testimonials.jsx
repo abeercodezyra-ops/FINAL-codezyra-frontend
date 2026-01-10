@@ -147,12 +147,15 @@ const Testimonials = () => {
 
                 {/* Our Presence Section */}
                 <div ref={presenceRef} className="relative mt-12 sm:mt-16 md:mt-20 lg:mt-24 pt-12 sm:pt-16 md:pt-20 overflow-hidden">
-                    {/* Clean Background Image - No Overlay */}
+                    {/* Clean Background Image */}
                     <img
                         src={globalImage}
                         alt="Global Presence"
                         className="absolute inset-0 w-full h-full object-cover"
                     />
+                    
+                    {/* Light White Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-white/40"></div>
                     
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center pb-12 sm:pb-16">
