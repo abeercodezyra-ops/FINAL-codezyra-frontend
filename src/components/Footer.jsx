@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className="flex flex-col lg:flex-row items-start justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
                     <div className="flex-1 w-full lg:w-auto">
                         <h2 className="text-[1.8rem] sm:text-[2.2rem] md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight">
-                            Serving <br className="hidden sm:block" /> Businesses <br className="hidden sm:block" /> in Pakistan
+                            Serving <br className="hidden sm:block" /> Businesses <br className="hidden sm:block" /> globally
                         </h2>
 
                         <div className="flex flex-wrap gap-2 sm:gap-3">
