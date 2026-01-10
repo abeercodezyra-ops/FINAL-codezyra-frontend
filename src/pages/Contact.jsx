@@ -79,12 +79,12 @@ const Contact = () => {
                 
                 {/* Content */}
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5 text-center">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 sm:mb-6 md:mb-7 px-2" style={{ textShadow: '0 0 40px rgba(255,255,255,0.8), 0 0 20px rgba(16,185,129,0.6), 0 4px 20px rgba(0,0,0,0.3)' }}>
-                        <span className="text-white drop-shadow-2xl">Start Your </span>
-                        <span className="bg-gradient-to-r from-cyan-400 via-accent to-green-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(16,185,129,0.8)]">Project</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
+                        <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Start Your </span>
+                        <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Project</span>
                     </h1>
-                    <p className="text-xl sm:text-2xl md:text-3xl text-white max-w-3xl mx-auto px-4 font-bold leading-relaxed" style={{ textShadow: '0 0 30px rgba(255,255,255,0.7), 0 0 15px rgba(16,185,129,0.5), 0 3px 15px rgba(0,0,0,0.3)' }}>
-                        Ready to build something <span className="text-cyan-300 font-extrabold drop-shadow-[0_0_20px_rgba(16,185,129,0.9)]">extraordinary?</span> Let's <span className="text-cyan-300 font-extrabold drop-shadow-[0_0_20px_rgba(16,185,129,0.9)]">talk</span>.
+                    <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl mx-auto px-4 font-semibold leading-relaxed">
+                        Ready to build something <span className="text-accent font-bold">extraordinary?</span> Let's <span className="text-accent font-bold">talk</span>.
                     </p>
                 </div>
             </section>

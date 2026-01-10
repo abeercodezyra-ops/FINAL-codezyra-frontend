@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Landmark, Stethoscope, GraduationCap, Truck, Cloud, ArrowRight } from 'lucide-react';
-import buildingBg from '../assets/pages img/no-people-contemporary-building-exterior-skyscraper-design-concept_53876-133720.avif';
 
 
 const industries = [
@@ -51,16 +50,8 @@ const Industries = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero */}
-            <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
-                {/* Background Image - No Overlay */}
-                <img
-                    src={buildingBg}
-                    alt="Building Background"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-                
-                {/* Content */}
-                <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5">
+            <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-gray-50 to-white">
+                <div className="max-w-[1280px] mx-auto px-4 sm:px-5">
                     <div className="text-center">
                         <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
                             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Digital Solutions by </span>

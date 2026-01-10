@@ -146,26 +146,21 @@ const Testimonials = () => {
                 </div>
 
                 {/* Our Presence Section */}
-                <div ref={presenceRef} className="relative mt-12 sm:mt-16 md:mt-20 lg:mt-24 pt-12 sm:pt-16 md:pt-20 overflow-hidden">
-                    {/* Clean Background Image */}
+                <div ref={presenceRef} className="relative mt-12 sm:mt-16 md:mt-20 lg:mt-24 pt-12 sm:pt-16 md:pt-20 rounded-3xl overflow-hidden">
+                    {/* Background Image */}
                     <img
                         src={globalImage}
                         alt="Global Presence"
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover opacity-25"
                     />
-                    
-                    {/* Light White Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-white/40"></div>
                     
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center pb-12 sm:pb-16">
                         {/* Heading */}
-                        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-5 md:mb-6 text-center px-4">
-                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Our Presence</span>
-                        </h3>
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-5 md:mb-6 text-center px-4">Our Presence</h3>
                         
                         {/* Description */}
-                        <p className="text-black text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4 font-bold">
+                        <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4">
                             We're proud to serve clients globally from our base in Pakistan, delivering world-class software solutions with passion and expertise.
                         </p>
                         
@@ -186,7 +181,7 @@ const Testimonials = () => {
                             {/* Text */}
                             <div className="mt-6 text-center">
                                 <p className="text-2xl font-bold text-black mb-1">Pakistan</p>
-                                <p className="text-base text-gray-700 font-medium">Our Home Base</p>
+                                <p className="text-base text-gray-500">Our Home Base</p>
                             </div>
                         </div>
                     </div>
