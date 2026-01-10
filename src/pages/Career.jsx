@@ -1,11 +1,97 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Palette, Smartphone, Server, Heart, Users, Zap, BookOpen, ArrowRight } from 'lucide-react';
+import { Code, Palette, Smartphone, Server, Heart, Users, Zap, BookOpen, ArrowRight, X, Upload } from 'lucide-react';
 
 const Career = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        position: '',
+        experience: '',
+        skills: '',
+        portfolioUrl: '',
+        resume: null,
+        coverMessage: ''
+    });
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    // Close modal on ESC key
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') setShowModal(false);
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => window.removeEventListener('keydown', handleEsc);
+    }, []);
+
+    // Prevent background scroll when modal is open
+    useEffect(() => {
+        if (showModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [showModal]);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file && (file.type === 'application/pdf' || file.type === 'application/msword' || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
+            setFormData(prev => ({ ...prev, resume: file }));
+        } else {
+            alert('Please upload a PDF or DOC file');
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validation
+        if (!formData.fullName || !formData.email || !formData.phone || !formData.position || !formData.experience || !formData.skills || !formData.resume) {
+            setSubmitStatus({ type: 'error', message: 'Please fill in all required fields' });
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setSubmitStatus({ type: 'error', message: 'Please enter a valid email address' });
+            return;
+        }
+
+        // Success message
+        setSubmitStatus({ type: 'success', message: 'Application submitted successfully! We will contact you soon.' });
+
+        // Reset form after 2 seconds
+        setTimeout(() => {
+            setFormData({
+                fullName: '',
+                email: '',
+                phone: '',
+                position: '',
+                experience: '',
+                skills: '',
+                portfolioUrl: '',
+                resume: null,
+                coverMessage: ''
+            });
+            setSubmitStatus({ type: '', message: '' });
+            setShowModal(false);
+        }, 2000);
+    };
 
     const openRoles = [
         {
@@ -207,18 +293,231 @@ const Career = () => {
                         <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
                             Send us your resume and portfolio. We'd love to hear from talented developers who are passionate about building great software.
                         </p>
-                        <Link to="/contact">
-                            <button className="bg-brand-gradient text-white px-10 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center gap-3">
-                                <span>Apply Now</span>
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
-                        </Link>
+                        <button 
+                            onClick={() => setShowModal(true)}
+                            className="bg-brand-gradient text-white px-10 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center gap-3"
+                        >
+                            <span>Apply Now</span>
+                            <ArrowRight className="w-5 h-5" />
+                        </button>
                         <p className="text-sm text-gray-400 mt-6">
                             Or email your resume to: <a href="mailto:careers@codezyra.com" className="text-accent hover:underline">careers@codezyra.com</a>
                         </p>
                     </div>
                 </div>
             </section>
+
+            {/* Application Modal */}
+            {showModal && (
+                <div 
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] flex items-center justify-center p-4 overflow-y-auto"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) setShowModal(false);
+                    }}
+                >
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl my-8 animate-slide-down">
+                        {/* Modal Header */}
+                        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                            <h3 className="text-2xl font-bold text-black">Apply for Position</h3>
+                            <button 
+                                onClick={() => setShowModal(false)}
+                                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+                            >
+                                <X size={20} className="text-gray-600" />
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <form onSubmit={handleSubmit} className="p-6 space-y-5 max-h-[calc(100vh-200px)] overflow-y-auto">
+                            {/* Full Name */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Full Name <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                    placeholder="Enter your full name"
+                                    required
+                                />
+                            </div>
+
+                            {/* Email */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Email Address <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                    placeholder="your.email@example.com"
+                                    required
+                                />
+                            </div>
+
+                            {/* Phone */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Phone / WhatsApp Number <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                    placeholder="+1 234 567 8900"
+                                    required
+                                />
+                            </div>
+
+                            {/* Position */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Position Applying For <span className="text-red-500">*</span>
+                                </label>
+                                <select
+                                    name="position"
+                                    value={formData.position}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white"
+                                    required
+                                >
+                                    <option value="">Select a position</option>
+                                    <option value="Frontend Developer">Frontend Developer</option>
+                                    <option value="Backend Developer">Backend Developer</option>
+                                    <option value="Mobile App Developer">Mobile App Developer</option>
+                                    <option value="UI/UX Designer">UI/UX Designer</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            {/* Experience */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Years of Experience <span className="text-red-500">*</span>
+                                </label>
+                                <select
+                                    name="experience"
+                                    value={formData.experience}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white"
+                                    required
+                                >
+                                    <option value="">Select experience level</option>
+                                    <option value="0-1">0-1 years (Entry Level)</option>
+                                    <option value="1-3">1-3 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="5-8">5-8 years</option>
+                                    <option value="8+">8+ years (Senior)</option>
+                                </select>
+                            </div>
+
+                            {/* Skills */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Skills / Tech Stack <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="skills"
+                                    value={formData.skills}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                    placeholder="e.g., React, Node.js, Python, AWS"
+                                    required
+                                />
+                            </div>
+
+                            {/* Portfolio URL */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Portfolio / GitHub / LinkedIn URL (Optional)
+                                </label>
+                                <input
+                                    type="url"
+                                    name="portfolioUrl"
+                                    value={formData.portfolioUrl}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                    placeholder="https://github.com/yourprofile"
+                                />
+                            </div>
+
+                            {/* Resume Upload */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Upload CV / Resume <span className="text-red-500">*</span>
+                                </label>
+                                <div className="relative">
+                                    <input
+                                        type="file"
+                                        onChange={handleFileChange}
+                                        accept=".pdf,.doc,.docx"
+                                        className="hidden"
+                                        id="resume-upload"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="resume-upload"
+                                        className="flex items-center justify-center gap-3 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-accent transition-colors cursor-pointer bg-gray-50 hover:bg-gray-100"
+                                    >
+                                        <Upload size={20} className="text-gray-600" />
+                                        <span className="text-gray-700">
+                                            {formData.resume ? formData.resume.name : 'Choose PDF or DOC file'}
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            {/* Cover Message */}
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    Short Cover Message (Optional)
+                                </label>
+                                <textarea
+                                    name="coverMessage"
+                                    value={formData.coverMessage}
+                                    onChange={handleInputChange}
+                                    rows="4"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none"
+                                    placeholder="Tell us why you'd be a great fit for this role..."
+                                ></textarea>
+                            </div>
+
+                            {/* Status Message */}
+                            {submitStatus.message && (
+                                <div className={`p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                                    {submitStatus.message}
+                                </div>
+                            )}
+
+                            {/* Submit Button */}
+                            <div className="flex gap-3 pt-4">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowModal(false)}
+                                    className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="flex-1 px-6 py-3 bg-brand-gradient text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                                >
+                                    Submit Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
