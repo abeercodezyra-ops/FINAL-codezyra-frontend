@@ -157,10 +157,12 @@ const Testimonials = () => {
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center pb-12 sm:pb-16">
                         {/* Heading */}
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-5 md:mb-6 text-center px-4">Our Presence</h3>
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-5 md:mb-6 text-center px-4">
+                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Our Presence</span>
+                        </h3>
                         
                         {/* Description */}
-                        <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4 font-semibold">
+                        <p className="text-black text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4 font-bold">
                             We're proud to serve clients globally from our base in Pakistan, delivering world-class software solutions with passion and expertise.
                         </p>
                         
