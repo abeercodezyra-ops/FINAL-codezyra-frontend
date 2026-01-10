@@ -77,17 +77,18 @@ const Contact = () => {
                     />
                 </div>
                 
-                {/* Light White Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-white/40 z-[1]"></div>
-                
                 {/* Content */}
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
-                        <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Start Your </span>
-                        <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Project</span>
+                        <span className="text-white drop-shadow-2xl">Start Your </span>
+                        <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Project</span>
                     </h1>
-                    <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl mx-auto px-4 font-semibold leading-relaxed">
-                        Ready to build something <span className="text-accent font-bold">extraordinary?</span> Let's <span className="text-accent font-bold">talk</span>.
+                    <p className="text-xl sm:text-2xl md:text-3xl max-w-3xl mx-auto px-4 font-semibold leading-relaxed">
+                        <span className="text-white drop-shadow-2xl">Ready to build something </span>
+                        <span className="text-accent font-bold drop-shadow-2xl">extraordinary?</span>
+                        <span className="text-white drop-shadow-2xl"> Let's </span>
+                        <span className="text-accent font-bold drop-shadow-2xl">talk</span>
+                        <span className="text-white drop-shadow-2xl">.</span>
                     </p>
                 </div>
             </section>
