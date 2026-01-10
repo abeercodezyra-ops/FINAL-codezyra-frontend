@@ -9,7 +9,7 @@ const testimonials = [
         quote: "I needed a website but wasn't sure where to start. The Codezyra team guided me through the entire process and created exactly what I expected. Super smooth experience.",
         name: "Ahmed",
         role: "CEO of PureGlow Labs",
-        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
         quote: "The entire process, from design to development, went smoothly. Thanks to their knowledge, our app is now operating without a glitch.",
