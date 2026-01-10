@@ -10,6 +10,9 @@ import Industries from './pages/Industries';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
+import Hiring from './pages/Hiring';
+import Pricing from './pages/Pricing';
+import Career from './pages/Career';
 
 // Service Pages
 import MobileAppDevelopment from './pages/services/MobileAppDevelopment';
@@ -45,6 +48,9 @@ function AppContent() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/hiring" element={<Hiring />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
     </MainLayout>
   );

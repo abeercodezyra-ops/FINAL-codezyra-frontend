@@ -5,6 +5,7 @@ import logoImg from '../assets/logo/Logo_Codezyra_PNG.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [moreOpen, setMoreOpen] = React.useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white md:bg-transparent border-none shadow-sm md:shadow-none">
@@ -66,6 +67,23 @@ const Navbar = () => {
             <Link to="/contact" className="px-2 sm:px-3 md:px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 hover:text-accent transition-colors whitespace-nowrap">
               FAQs
             </Link>
+
+            {/* More Dropdown */}
+            <div className="relative group">
+              <div className="flex items-center gap-1 px-2 sm:px-3 md:px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 hover:text-accent transition-colors whitespace-nowrap cursor-pointer">
+                More <ChevronDown size={12} className="sm:w-3.5 sm:h-3.5" />
+              </div>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[9999]">
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 sm:p-6 md:p-8 min-w-[200px]">
+                  <div className="space-y-2 sm:space-y-3">
+                    <h4 className="text-xs sm:text-sm font-bold text-gray-900 mb-3 sm:mb-4">More</h4>
+                    <Link to="/hiring" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Hiring</Link>
+                    <Link to="/pricing" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Pricing</Link>
+                    <Link to="/career" className="block text-xs sm:text-sm text-gray-600 hover:text-accent transition-colors py-1">Career</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -111,6 +129,31 @@ const Navbar = () => {
             <Link to="/contact" onClick={() => setIsOpen(false)} className="px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-accent rounded-lg transition-colors touch-manipulation">
               FAQs
             </Link>
+
+            {/* More Accordion */}
+            <div>
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className="w-full px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-accent rounded-lg transition-colors touch-manipulation flex items-center justify-between"
+              >
+                <span>More</span>
+                <ChevronDown size={16} className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {moreOpen && (
+                <div className="pl-8 mt-1 space-y-1">
+                  <Link to="/hiring" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                    Hiring
+                  </Link>
+                  <Link to="/pricing" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                    Pricing
+                  </Link>
+                  <Link to="/career" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                    Career
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-4 mx-4 px-4 py-3 text-base font-bold text-white bg-brand-gradient rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-accent/20 touch-manipulation text-center flex items-center justify-center gap-2">
               <span>Contact Sales</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
