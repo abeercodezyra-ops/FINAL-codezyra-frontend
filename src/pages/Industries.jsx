@@ -63,10 +63,10 @@ const Industries = () => {
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5">
                     <div className="text-center">
                         <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
-                            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent drop-shadow-2xl">Digital Solutions by </span>
-                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Industry</span>
+                            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Digital Solutions by </span>
+                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Industry</span>
                         </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white max-w-4xl mx-auto px-4 font-bold leading-relaxed drop-shadow-lg">
+                        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-4xl mx-auto px-4 font-semibold leading-relaxed">
                             We bring <span className="text-accent font-bold">deep domain expertise</span> to every project, understanding your <span className="text-accent font-bold">regulatory requirements</span> and <span className="text-accent font-bold">user behaviors</span>
                         </p>
                     </div>

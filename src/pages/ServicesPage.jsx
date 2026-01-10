@@ -67,10 +67,11 @@ const ServicesPage = () => {
                 </div>
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5">
                     <div className="text-center">
-                        <h1 className="text-[2rem] sm:text-[2.5rem] md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-5 md:mb-6 px-2 drop-shadow-lg">
-                            End-to-End Software Services
+                        <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
+                            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">End-to-End </span>
+                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Software Services</span>
                         </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4 drop-shadow-md">
+                        <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto px-4 font-semibold">
                             From concept to deployment, we handle every aspect of your digital product lifecycle.
                         </p>
                     </div>
