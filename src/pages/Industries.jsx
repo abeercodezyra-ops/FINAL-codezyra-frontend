@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Landmark, Stethoscope, GraduationCap, Truck, Cloud, ArrowRight } from 'lucide-react';
 import buildingBg from '../assets/pages img/no-people-contemporary-building-exterior-skyscraper-design-concept_53876-133720.avif';
-import buildingBg from '../assets/pages img/no-people-contemporary-building-exterior-skyscraper-design-concept_53876-133720.avif';
 
 
 const industries = [
