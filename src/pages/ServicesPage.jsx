@@ -63,15 +63,15 @@ const ServicesPage = () => {
                         alt="Software Services Background"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-white/50"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
                 </div>
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5">
                     <div className="text-center">
                         <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
-                            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">End-to-End </span>
-                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Software Services</span>
+                            <span className="text-white drop-shadow-2xl">End-to-End </span>
+                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Software Services</span>
                         </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto px-4 font-semibold">
+                        <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto px-4 font-semibold drop-shadow-lg">
                             From concept to deployment, we handle every aspect of your digital product lifecycle.
                         </p>
                     </div>
@@ -125,15 +125,15 @@ const ServicesPage = () => {
                         alt="Technology Background"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-white/50"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
                 </div>
                 
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5 text-center">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
-                        <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Ready to Start Your </span>
-                        <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Project?</span>
+                        <span className="text-white drop-shadow-2xl">Ready to Start Your </span>
+                        <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Project?</span>
                     </h2>
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto font-semibold px-4">
+                    <p className="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto font-semibold px-4 drop-shadow-lg">
                         Let's discuss how we can help bring your vision to life with our expert team.
                     </p>
                     <Link to="/contact">
