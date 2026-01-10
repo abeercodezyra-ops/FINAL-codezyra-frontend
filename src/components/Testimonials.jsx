@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import globalImage from '../assets/istockphoto-1325219364-612x612.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -146,16 +145,8 @@ const Testimonials = () => {
                 </div>
 
                 {/* Our Presence Section */}
-                <div ref={presenceRef} className="relative mt-12 sm:mt-16 md:mt-20 lg:mt-24 pt-12 sm:pt-16 md:pt-20 rounded-3xl overflow-hidden">
-                    {/* Background Image */}
-                    <img
-                        src={globalImage}
-                        alt="Global Presence"
-                        className="absolute inset-0 w-full h-full object-cover opacity-25"
-                    />
-                    
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col items-center justify-center pb-12 sm:pb-16">
+                <div ref={presenceRef} className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 pt-12 sm:pt-16 md:pt-20">
+                    <div className="flex flex-col items-center justify-center pb-12 sm:pb-16">
                         {/* Heading */}
                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-5 md:mb-6 text-center px-4">Our Presence</h3>
                         
