@@ -7,31 +7,31 @@ gsap.registerPlugin(ScrollTrigger);
 const testimonials = [
     {
         quote: "I needed a website but wasn't sure where to start. The Codezyra team guided me through the entire process and created exactly what I expected. Super smooth experience.",
-        name: "Sarah Mitchell",
+        name: "Ahmed",
         role: "CEO of PureGlow Labs",
         img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
     },
     {
         quote: "The entire process, from design to development, went smoothly. Thanks to their knowledge, our app is now operating without a glitch.",
-        name: "Emily Walker",
+        name: "Mellbery",
         role: "IT Project Manager of SavoryBite Foods",
         img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
     },
     {
         quote: "They took care of everything from beginning to end. The app works perfectly, and we are really pleased with the outcome!",
-        name: "Daniel Foster",
+        name: "Hazen",
         role: "Founder & CTO of GlowLuxe Beauty",
         img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
         quote: "Working with this team has been a game-changer for our business. They delivered beyond our expectations.",
-        name: "Michael Reynolds",
+        name: "Victor",
         role: "Director of Operations",
         img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
         quote: "The Codezyra team was outstanding! Fast response, honest communication, and an excellent end result.",
-        name: "David Lee",
+        name: "Umer",
         role: "Co-founder & President of Dealsparx",
         img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
     }
