@@ -105,7 +105,7 @@ const Testimonials = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative py-8 sm:py-12 md:py-20 lg:py-24 bg-white overflow-hidden">
+        <section ref={sectionRef} className="relative py-8 sm:py-12 md:py-20 lg:py-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-5">
                 {/* Large Centered Heading */}
                 <div ref={headingRef} className="text-center mb-8 sm:mb-10 md:mb-14">
