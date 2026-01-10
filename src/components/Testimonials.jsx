@@ -151,11 +151,8 @@ const Testimonials = () => {
                     <img
                         src={globalImage}
                         alt="Global Presence"
-                        className="absolute inset-0 w-full h-full object-cover opacity-15"
+                        className="absolute inset-0 w-full h-full object-cover opacity-25"
                     />
-                    
-                    {/* Overlay for better text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white/70"></div>
                     
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center pb-12 sm:pb-16">
