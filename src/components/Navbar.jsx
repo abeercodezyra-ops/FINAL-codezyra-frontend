@@ -19,7 +19,7 @@ const Navbar = () => {
           <div className="h-6 md:h-8 w-px bg-gray-200"></div>
 
           <div className="block">
-            <div className="text-xs text-gray-800 font-bold leading-tight">Trusted Talent,</div>
+            <div className="text-xs text-gray-800 font-bold leading-tight">problem-solving tech partner</div>
             <div className="text-xs text-gray-500 font-medium leading-tight">Anywhere, Anytime.</div>
           </div>
         </div>
