@@ -77,6 +77,9 @@ const Contact = () => {
                     />
                 </div>
                 
+                {/* Light White Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-white/40 z-[1]"></div>
+                
                 {/* Content */}
                 <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-5 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 sm:mb-6 md:mb-7 px-2">
