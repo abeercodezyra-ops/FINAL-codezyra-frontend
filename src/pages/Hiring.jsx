@@ -1,11 +1,61 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Smartphone, Server, Layout, Database, Cog, ArrowRight, CheckCircle } from 'lucide-react';
+import { Code, Smartphone, Server, Layout, Database, Cog, ArrowRight, CheckCircle, ArrowLeft } from 'lucide-react';
 
 const Hiring = () => {
+    const [showForm, setShowForm] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        companyName: '',
+        projectType: '',
+        budget: '',
+        description: ''
+    });
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validation
+        if (!formData.fullName || !formData.email || !formData.projectType || !formData.description) {
+            setSubmitStatus({ type: 'error', message: 'Please fill in all required fields' });
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setSubmitStatus({ type: 'error', message: 'Please enter a valid email address' });
+            return;
+        }
+
+        // Success message
+        setSubmitStatus({ type: 'success', message: 'Request submitted successfully! We will contact you within 24 hours.' });
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+            setFormData({
+                fullName: '',
+                email: '',
+                companyName: '',
+                projectType: '',
+                budget: '',
+                description: ''
+            });
+            setSubmitStatus({ type: '', message: '' });
+            setShowForm(false);
+        }, 3000);
+    };
 
     const services = [
         { icon: <Smartphone size={32} />, title: 'Mobile App Development', desc: 'Native iOS & Android apps built with React Native, Flutter, or Swift/Kotlin' },
@@ -142,19 +192,167 @@ const Hiring = () => {
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-12 border border-accent/20">
-                            <h3 className="text-2xl font-bold text-black mb-6">
-                                Ready to Build Something Great?
-                            </h3>
-                            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                                Let's discuss your project requirements and create a tailored solution that drives real business value.
-                            </p>
-                            <Link to="/contact">
-                                <button className="w-full bg-brand-gradient text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-12 border border-accent/20 relative overflow-hidden">
+                            {/* CTA Content */}
+                            <div 
+                                className={`transition-all duration-500 ease-in-out ${showForm ? 'opacity-0 -translate-x-full absolute inset-0 pointer-events-none' : 'opacity-100 translate-x-0'}`}
+                            >
+                                <h3 className="text-2xl font-bold text-black mb-6">
+                                    Ready to Build Something Great?
+                                </h3>
+                                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                                    Let's discuss your project requirements and create a tailored solution that drives real business value.
+                                </p>
+                                <button 
+                                    onClick={() => setShowForm(true)}
+                                    className="w-full bg-brand-gradient text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2"
+                                >
                                     <span>Hire Us Now</span>
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </Link>
+                            </div>
+
+                            {/* Form Content */}
+                            <div 
+                                className={`transition-all duration-500 ease-in-out ${showForm ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full absolute inset-0 pointer-events-none'}`}
+                            >
+                                {/* Back Button */}
+                                <button
+                                    onClick={() => {
+                                        setShowForm(false);
+                                        setSubmitStatus({ type: '', message: '' });
+                                    }}
+                                    className="flex items-center gap-2 text-accent hover:text-accent/80 font-semibold mb-6 transition-colors"
+                                >
+                                    <ArrowLeft className="w-5 h-5" />
+                                    <span>Back</span>
+                                </button>
+
+                                <h3 className="text-2xl font-bold text-black mb-6">
+                                    Tell Us About Your Project
+                                </h3>
+
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    {/* Full Name */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Full Name <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="fullName"
+                                            value={formData.fullName}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-sm"
+                                            placeholder="John Doe"
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-sm"
+                                            placeholder="john@company.com"
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Company Name */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Company Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="companyName"
+                                            value={formData.companyName}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-sm"
+                                            placeholder="Your Company"
+                                        />
+                                    </div>
+
+                                    {/* Project Type */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Project Type <span className="text-red-500">*</span>
+                                        </label>
+                                        <select
+                                            name="projectType"
+                                            value={formData.projectType}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white text-sm"
+                                            required
+                                        >
+                                            <option value="">Select project type</option>
+                                            <option value="Website">Website</option>
+                                            <option value="Mobile App">Mobile App</option>
+                                            <option value="Admin Panel">Admin Panel</option>
+                                            <option value="Custom Software">Custom Software</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    {/* Budget Range */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Project Budget Range
+                                        </label>
+                                        <select
+                                            name="budget"
+                                            value={formData.budget}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white text-sm"
+                                        >
+                                            <option value="">Select budget range</option>
+                                            <option value="Under $5k">Under $5k</option>
+                                            <option value="$5k - $10k">$5k - $10k</option>
+                                            <option value="$10k - $25k">$10k - $25k</option>
+                                            <option value="$25k - $50k">$25k - $50k</option>
+                                            <option value="$50k+">$50k+</option>
+                                        </select>
+                                    </div>
+
+                                    {/* Project Description */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Project Description <span className="text-red-500">*</span>
+                                        </label>
+                                        <textarea
+                                            name="description"
+                                            value={formData.description}
+                                            onChange={handleInputChange}
+                                            rows="3"
+                                            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none text-sm"
+                                            placeholder="Brief description of your project requirements..."
+                                            required
+                                        ></textarea>
+                                    </div>
+
+                                    {/* Status Message */}
+                                    {submitStatus.message && (
+                                        <div className={`p-3 rounded-lg text-sm ${submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                                            {submitStatus.message}
+                                        </div>
+                                    )}
+
+                                    {/* Submit Button */}
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-brand-gradient text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                                    >
+                                        Submit Request
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
