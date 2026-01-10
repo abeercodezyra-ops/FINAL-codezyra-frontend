@@ -16,9 +16,9 @@ const Navbar = () => {
             <img src={logoImg} alt="Codezyra Logo" className="h-10 sm:h-12 md:h-[45px] w-auto object-contain transition-transform duration-200 hover:scale-105" />
           </Link>
 
-          <div className="hidden lg:block h-6 md:h-8 w-px bg-gray-200"></div>
+          <div className="h-6 md:h-8 w-px bg-gray-200"></div>
 
-          <div className="hidden lg:block">
+          <div className="block">
             <div className="text-xs text-gray-800 font-bold leading-tight">Trusted Talent,</div>
             <div className="text-xs text-gray-500 font-medium leading-tight">Anywhere, Anytime.</div>
           </div>
