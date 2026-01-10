@@ -72,7 +72,7 @@ const ServicesPage = () => {
                             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-2xl">Software Services</span>
                         </h1>
                         <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto px-4 font-semibold drop-shadow-lg">
-                            From concept to deployment, we handle every aspect of your digital product lifecycle.
+                            At Codezyra, we are dedicated to empowering businesses with comprehensive digital marketing and development solutions. Here's a detailed overview of our services.
                         </p>
                     </div>
                 </div>
