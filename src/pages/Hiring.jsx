@@ -192,10 +192,10 @@ const Hiring = () => {
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-12 border border-accent/20 relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-12 border border-accent/20 relative overflow-hidden min-h-[650px] transition-all duration-700 ease-in-out">
                             {/* CTA Content */}
                             <div 
-                                className={`transition-all duration-500 ease-in-out ${showForm ? 'opacity-0 -translate-x-full absolute inset-0 pointer-events-none' : 'opacity-100 translate-x-0'}`}
+                                className={`transition-all duration-700 ease-in-out ${showForm ? 'opacity-0 -translate-x-full absolute inset-0 p-8 md:p-12 pointer-events-none' : 'opacity-100 translate-x-0'}`}
                             >
                                 <h3 className="text-2xl font-bold text-black mb-6">
                                     Ready to Build Something Great?
@@ -214,7 +214,7 @@ const Hiring = () => {
 
                             {/* Form Content */}
                             <div 
-                                className={`transition-all duration-500 ease-in-out ${showForm ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full absolute inset-0 pointer-events-none'}`}
+                                className={`transition-all duration-700 ease-in-out ${showForm ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full absolute inset-0 p-8 md:p-12 pointer-events-none'}`}
                             >
                                 {/* Back Button */}
                                 <button
