@@ -137,21 +137,23 @@ const Navbar = () => {
                 className="w-full px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-accent rounded-lg transition-colors touch-manipulation flex items-center justify-between"
               >
                 <span>More</span>
-                <ChevronDown size={16} className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown size={16} className={`transition-transform duration-300 ease-in-out ${moreOpen ? 'rotate-180' : ''}`} />
               </button>
-              {moreOpen && (
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${moreOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+              >
                 <div className="pl-8 mt-1 space-y-1">
-                  <Link to="/hiring" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                  <Link to="/hiring" onClick={() => { setIsOpen(false); setMoreOpen(false); }} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
                     Hiring
                   </Link>
-                  <Link to="/pricing" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                  <Link to="/pricing" onClick={() => { setIsOpen(false); setMoreOpen(false); }} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
                     Pricing
                   </Link>
-                  <Link to="/career" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
+                  <Link to="/career" onClick={() => { setIsOpen(false); setMoreOpen(false); }} className="block px-4 py-2 text-base text-gray-600 hover:text-accent transition-colors touch-manipulation">
                     Career
                   </Link>
                 </div>
-              )}
+              </div>
             </div>
 
             <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-4 mx-4 px-4 py-3 text-base font-bold text-white bg-brand-gradient rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-accent/20 touch-manipulation text-center flex items-center justify-center gap-2">
