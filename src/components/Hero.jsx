@@ -86,9 +86,6 @@ const Hero = () => {
                         ))}
                     </div>
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-6 sm:mb-7 md:mb-8 max-w-4xl mx-auto font-semibold px-4 drop-shadow-2xl leading-relaxed">
-                        Empowering <span className="text-accent font-bold">eCommerce Entrepreneurs</span> to Start and Scale <span className="text-accent font-bold">Online Ventures</span>
-                    </p>
-                    <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto font-medium px-4 drop-shadow-lg leading-relaxed">
                         Available in your <span className="text-accent font-bold">Timezone</span>, at <span className="text-accent font-bold">Affordable Rates</span>, with <span className="text-accent font-bold">Full Transparency</span>
                     </p>
                     <div className="hero-actions flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
