@@ -40,6 +40,73 @@ const WebAppDevelopment = () => {
             {/* Main Content */}
             <section className="py-12 sm:py-16 md:py-20">
                 <div className="max-w-[1280px] mx-auto px-4 sm:px-5">
+                    {/* Intro Section */}
+                    <div className="mb-12 md:mb-16">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 text-center">
+                            What We Offer
+                        </h2>
+                        <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto text-center leading-relaxed mb-8">
+                            We specialize in creating professional, user-friendly, and high-performing websites to meet your business needs. Here's what we offer:
+                        </p>
+                    </div>
+
+                    {/* Services Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 md:mb-16">
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                Custom Design
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Build visually stunning websites tailored to your brand identity.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                Responsive Development
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Ensure seamless functionality across all devices, including mobile, tablet, and desktop.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                E-Commerce Solutions
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Develop secure and scalable online stores with payment gateway integration and inventory management.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                User Experience (UX) Optimization
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Create intuitive navigation and layouts for an enhanced user experience.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                SEO-Friendly Development
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Build websites optimized for search engines to improve visibility and rankings.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                            <h3 className="text-2xl font-bold text-black mb-4">
+                                Maintenance & Support
+                            </h3>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Provide ongoing technical support, updates, and troubleshooting to ensure your website runs smoothly.
+                            </p>
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
                         {/* Main Content */}
                         <div className="lg:col-span-2 space-y-6 sm:space-y-7 md:space-y-8">
