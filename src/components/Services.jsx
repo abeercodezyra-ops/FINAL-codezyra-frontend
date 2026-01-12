@@ -256,7 +256,7 @@ const Services = () => {
                                                     Learn More <ArrowRight size={16} className="sm:w-5 sm:h-5" />
                                                 </Link>
                                             </div>
-                                            <div className="hidden lg:flex flex-1 w-full lg:w-auto justify-center lg:justify-end items-end perspective-1200 mt-4 lg:mt-6 ml-4 lg:ml-8">
+                                            <div className="hidden lg:flex flex-1 w-full lg:w-auto justify-center lg:justify-start items-end perspective-1200 mt-4 lg:mt-6 ml-4 lg:ml-0">
                                                 <img
                                                     ref={el => imageRefs.current[service.id] = el}
                                                     src={service.img}
