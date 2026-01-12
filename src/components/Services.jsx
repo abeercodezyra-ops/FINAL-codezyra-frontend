@@ -261,7 +261,7 @@ const Services = () => {
                                                     ref={el => imageRefs.current[service.id] = el}
                                                     src={service.img}
                                                     alt={service.title}
-                                                    className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[280px] lg:max-w-[320px] h-auto object-contain rounded-xl"
+                                                    className="w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[220px] h-auto object-contain rounded-xl"
                                                     style={{
                                                         filter: 'drop-shadow(-12px 12px 35px rgba(0, 0, 0, 0.4))'
                                                     }}
